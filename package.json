@@ -1,25 +1,25 @@
 {
-  "name": "strech-backend",
+  "name": "stretch-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "description": "API for Stretch: student budgeting and Roommate Kitty shared expenses",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=22.9"
+  },
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node --env-file-if-exists=.env src/server.js",
+    "dev": "node --env-file-if-exists=.env --watch src/server.js",
+    "db:migrate": "node --env-file-if-exists=.env scripts/migrate.js",
+    "test": "node --test"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
-    "dotenv": "^18.0.8",
     "express": "^5.3.0",
-    "express-rate-limit": "^8.7.1",
+    "google-auth-library": "^11.3.1",
     "jsonwebtoken": "^9.0.3",
-    "pg": "^8.23.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.14"
+    "pg": "^8.23.1",
+    "zod": "^4.6.7"
   }
 }
